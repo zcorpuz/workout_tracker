@@ -8,15 +8,23 @@ const User = require("./workoutModel");
 
 const app = express();
 
+//Middleware
 app.use(logger("dev"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+//Mongoose Connection
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
+  useNewUrlParser: true,
+  useFindAndModify: false 
+});
 
+//Routes
+app.use(require("./routes/api-routes.js"));
+
+//Starting Port
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
