@@ -3,7 +3,7 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 const express = require("express");
 
-const Workout = require("../models/workout");
+const Workout = require("../models/workoutModel");
 
 //List of Workouts
 router.get("/api/workouts", (req, res) => {
