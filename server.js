@@ -26,6 +26,4 @@ app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
 //Starting Port
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
-});
+app.listen(PORT, () => console.log(`App running on port ${PORT}!`));

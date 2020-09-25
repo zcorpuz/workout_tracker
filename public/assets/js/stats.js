@@ -186,7 +186,7 @@ function populateChart(data) {
   });
 }
 
-function duration(data) {
+const duration = data => {
   let durations = [];
 
   data.forEach(workout => {
@@ -198,7 +198,7 @@ function duration(data) {
   return durations;
 }
 
-function calculateTotalWeight(data) {
+const calculateTotalWeight = data => {
   let total = [];
 
   data.forEach(workout => {
@@ -210,7 +210,7 @@ function calculateTotalWeight(data) {
   return total;
 }
 
-function workoutNames(data) {
+const workoutNames = data => {
   let workouts = [];
 
   data.forEach(workout => {

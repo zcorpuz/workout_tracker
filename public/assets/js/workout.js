@@ -19,7 +19,7 @@ async function initWorkout() {
     }
   }
   
-  function tallyExercises(exercises) {
+  const tallyExercises = exercises => {
     const tallied = exercises.reduce((acc, curr) => {
       if (curr.type === "resistance") {
         acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
@@ -33,7 +33,7 @@ async function initWorkout() {
     return tallied;
   }
   
-  function formatDate(date) {
+  const formatDate = date => {
     const options = {
       weekday: "long",
       year: "numeric",
@@ -44,7 +44,7 @@ async function initWorkout() {
     return new Date(date).toLocaleDateString(options);
   }
   
-  function renderWorkoutSummary(summary) {
+  const renderWorkoutSummary = summary => {
     const container = document.querySelector(".workout-stats");
   
     const workoutKeyMap = {
@@ -71,7 +71,7 @@ async function initWorkout() {
     });
   }
   
-  function renderNoWorkoutText() {
+  const renderNoWorkoutText = () => {
     const container = document.querySelector(".workout-stats");
     const p = document.createElement("p");
     const strong = document.createElement("strong");

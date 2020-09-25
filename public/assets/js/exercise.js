@@ -119,14 +119,14 @@ async function handleFormSubmit(event) {
   toast.classList.add("success");
 }
 
-function handleToastAnimationEnd() {
+const handleToastAnimationEnd = () => {
   toast.removeAttribute("class");
   if (shouldNavigateAway) {
     location.href = "/";
   }
 }
 
-function clearInputs() {
+const clearInputs = () => {
   cardioNameInput.value = "";
   nameInput.value = "";
   setsInput.value = "";
